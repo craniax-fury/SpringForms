@@ -1,5 +1,7 @@
 package com.insignia.SpringFormTag.entities;
 
+import com.insignia.SpringFormTag.annotations.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Form {
@@ -13,7 +15,6 @@ public class Form {
     private String lastName;
 
     // for integer field, to make this required we should use Integer instead of int as then it won't get a default value of 0
-    @NotNull
     @Min(value = 1,message = "free passes value cannot be less than 1")
     @Max(value = 5,message = "free passes value cannot be more than 5")
     private int freePasses;
@@ -22,6 +23,9 @@ public class Form {
     @NotNull(message = "please enter valid postal code")
     @Pattern(regexp="^[0-9]{6}",message="please enter valid postal code")
     private String postalCode;
+
+    @CourseCode(value="INSIGNIA_", message="CourseCode should start with INSGINIA_")
+    private String courseCode;
 
     public String getFirstName() {
         return firstName;
@@ -53,5 +57,13 @@ public class Form {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }

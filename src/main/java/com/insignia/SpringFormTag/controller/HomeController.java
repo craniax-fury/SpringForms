@@ -31,6 +31,8 @@ public class HomeController extends HttpServlet {
 
     @RequestMapping("/process")
     public String process(@Valid @ModelAttribute("form") Form form,BindingResult bindingResult){
+
+        System.out.println(bindingResult);
         if (bindingResult.hasErrors()){
             return "form";
         }

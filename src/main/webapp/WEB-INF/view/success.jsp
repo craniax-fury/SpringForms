@@ -5,8 +5,7 @@
 
 </head>
 <body>
-    Hello ${form.firstName} ${form.lastName}<br/>
-    You get free ${form.freePasses} passes
-
+    Hello ${form.firstName} ${form.lastName}<br/><br/>
+    You get free ${form.freePasses} passes For course ${form.courseCode}
 </body>
 </html>
